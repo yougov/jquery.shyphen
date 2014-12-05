@@ -1,0 +1,26 @@
+{
+  "name": "shyphen",
+  "title": "Shyphen",
+  "description": "Insert soft hyphens into text nodes as necessary to avoid overflow.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/yougov/jquery.shyphen",
+  "author": {
+    "name": "Mark Florian",
+    "email": "markrian@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/yougov/jquery.shyphen.git"
+  },
+  "bugs": "https://github.com/yougov/jquery.shyphen/issues",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/yougov/jquery.shyphen/blob/master/LICENSE-MIT"
+    }
+  ],
+  "dependencies": {
+    "jquery": "*"
+  },
+  "keywords": []
+}
