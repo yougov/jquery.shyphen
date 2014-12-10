@@ -3,11 +3,14 @@
 <head>
   <meta charset="utf-8">
   <title>Shyphen Test Suite</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <!-- Load local jQuery. This can be overridden with a ?jquery=___ param. -->
   <script src="../libs/jquery-loader.js"></script>
   <!-- Load local QUnit. -->
   <link rel="stylesheet" href="../libs/qunit/qunit.css" media="screen">
   <script src="../libs/qunit/qunit.js"></script>
+  <!-- Load dependencies -->
+  <script src="../libs/jquery.textnodes.js"></script>
   <!-- Load local lib and tests. -->
   <script src="../src/jquery.shyphen.js"></script>
   <script src="shyphen_test.js"></script>
@@ -15,13 +18,24 @@
        you REALLY want to mess around with jQuery in the console. REMEMBER WE
        ARE TESTING A PLUGIN HERE, THIS HELPS ENSURE BEST PRACTICES. REALLY. -->
   <script>window._$ = jQuery.noConflict(true);</script>
+  <style>
+    body {
+      font-size: 14px;
+      font-family: sans-serif;
+    }
+  </style>
 </head>
 <body>
   <div id="qunit"></div>
   <div id="qunit-fixture">
-    <span>lame test markup</span>
-    <span>normal test markup</span>
-    <span>awesome test markup</span>
+    <div id="simple"><span>Here's some text: Supercalifragilisticexpialidocious! And subsequently, definitely more text.</span></div>
+    <div id="complex">
+      <div class="text">
+        Normal test markup
+        <p>Here's some text: <strong>Supercalifragilisticexpialidocious!</strong> And subsequently, definitely more text.</p>
+        <span>Some additional test markup</span>
+      </div>
+    </div>
   </div>
 </body>
 </html>
