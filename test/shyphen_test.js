@@ -74,7 +74,7 @@
 
   test("doesn't insert more hyphens than necessary", function () {
     this.complex.width(170);
-    var text = this.complex.shyphen().text()
+    var text = this.complex.shyphen().text();
     equal(countCharacters(text, shy), 9, "doesn't excessively hyphenate");
   });
 
@@ -90,7 +90,7 @@
 
   test("more aggressively hyphenates to fit text if necessary", function () {
     this.complex.width(1);
-    var text = this.complex.shyphen().text()
+    var text = this.complex.shyphen().text();
     equal(countCharacters(text, shy), 44, "can aggressively hyphenate");
   });
 
