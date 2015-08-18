@@ -56,9 +56,18 @@
   function shyphenate($el, options) {
     var width = $el.width();
     var nodes = $el.textNodes();
-    var texts = nodes.map(function () {
-      return this.nodeValue;
-    });
+    var texts = $el.data('shyphen-original-texts');
+    if (texts) {
+      nodes.each(function (i, node) {
+        node.nodeValue = texts[i];
+      });
+    } else {
+      texts = nodes.map(function () {
+        return this.nodeValue;
+      });
+      $el.data('shyphen-original-texts', texts);
+    }
+
     var wrappers = nodes.wrap(makeWrapper).parent();
 
     function tryHyphenation(interval) {

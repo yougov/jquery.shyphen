@@ -107,4 +107,19 @@
     ok(hasSoftHyphen(complex.text()), "soft hyphens inserted in complex");
   });
 
+  test("always inserts soft hyphens using the original text(s)", function () {
+    // first, record the original text
+    var original = this.complex.text();
+
+    // second, aggressively hyphenate
+    this.complex.width(1);
+    var text = this.complex.shyphen().text();
+    notEqual(text, original, "text was hyphenated");
+
+    // third, resize so that no hyphens are necessary, re-run
+    this.complex.width(1000);
+    text = this.complex.shyphen().text();
+    equal(text, original, "original text is restored");
+  });
+
 }(jQuery));
